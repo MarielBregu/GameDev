@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Data/ComboAttackData.h"
 #include "MyCharacter.generated.h"
 
 
@@ -22,6 +23,19 @@ public:
 protected:
 
 	virtual void BeginPlay() override;
+
+
+	// Assegna dall’editor la tua DT_ComboAttack
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Data")
+	UDataTable* ComboTable = nullptr;
+
+	
+	//Sarebbe il get data table row del Bp
+	//
+	UFUNCTION(BlueprintCallable, Category="Combat|Combo")
+	bool GetDataTableRow_ComboAttack(const FString& Sequence, FComboAttackData& OutRow) const; 
+
+
 
 public:
 	
