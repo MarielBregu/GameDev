@@ -43,7 +43,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat|Input Buffer", meta=(ClampMin="1"))
 	int32 MaxBufferSize = 4;
 
-	UPROPERTY(BlueprintAssignable, Category="Combat|Input Buffer")
+	UPROPERTY(BlueprintAssignable, Category="Com'09878978054bat|Input Buffer")
 	FOnComboAttempt OnComboAttempt;
 
 private:

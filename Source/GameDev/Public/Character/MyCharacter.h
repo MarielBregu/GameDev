@@ -31,7 +31,7 @@ protected:
 
 	
 	//Sarebbe il get data table row del Bp
-	//
+	
 	UFUNCTION(BlueprintCallable, Category="Combat|Combo")
 	bool GetDataTableRow_ComboAttack(const FString& Sequence, FComboAttackData& OutRow) const; 
 
