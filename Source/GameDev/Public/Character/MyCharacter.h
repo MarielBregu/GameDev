@@ -7,9 +7,8 @@
 #include "Data/ComboAttackData.h"
 #include "MyCharacter.generated.h"
 
-
 class UInputBufferComponent;
-
+class UInputTagBufferComponent;
 
 UCLASS()
 class GAMEDEV_API AMyCharacter : public ACharacter
@@ -48,6 +47,10 @@ private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta=(AllowPrivateAccess="true"))
 	UInputBufferComponent* InputBuffer;
+
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category="Components", meta=(AllowPrivateAccess="true"))
+	UInputTagBufferComponent* InputTagBuffer;
+
 };
 	
 

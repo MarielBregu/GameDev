@@ -1,16 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Character/MyCharacter.h"
 //#include "Data/ComboAttackData.h"
 #include "Components/InputBufferComponent.h"
+#include "Components/InputTagBufferComponent.h"
 
 
 AMyCharacter::AMyCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	InputBuffer = CreateDefaultSubobject<UInputBufferComponent>(TEXT("InputBuffer"));
-
+	InputTagBuffer = CreateDefaultSubobject<UInputTagBufferComponent>(TEXT("InputTagBuffer"));
 }
 
 void AMyCharacter::BeginPlay()
