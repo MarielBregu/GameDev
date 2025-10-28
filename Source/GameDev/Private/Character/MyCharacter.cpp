@@ -1,7 +1,7 @@
 #include "Character/MyCharacter.h"
-//#include "Data/ComboAttackData.h"
 #include "Components/InputBufferComponent.h"
 #include "Components/InputTagBufferComponent.h"
+#include "GameplayTagContainer.h"
 
 
 AMyCharacter::AMyCharacter()
@@ -14,7 +14,9 @@ AMyCharacter::AMyCharacter()
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	CurrentStance = FGameplayTag::RequestGameplayTag(FName("Stance.Normal"));
+
 }
 
 void AMyCharacter::Tick(float DeltaTime)
@@ -54,6 +56,23 @@ bool AMyCharacter::GetDataTableRow_ComboAttack(const FString& Sequence, FComboAt
 	}
 	// false = Row Not Found.
 	return false;          
+}
+
+FGameplayTag AMyCharacter::MakeStancedInputTag(const FGameplayTag& BaseInputTag) const
+{
+
+	if (!BaseInputTag.IsValid() || !CurrentStance.IsValid())
+		return BaseInputTag;
+
+	//Levo il prefisso Stance dalla tag Stance.(Norma,Wind,Fire ecc) , per trasformare il tag in:
+	//Input.Attack.Light.normal o purre Input.Attack.Light.qualsisiStance senza prefisso
+	const FString StanceStr = CurrentStance.ToString().Contains(TEXT("."))
+	? CurrentStance.ToString().RightChop(CurrentStance.ToString().Find(TEXT(".")) + 1)
+	: CurrentStance.ToString();
+
+	const FString Full = BaseInputTag.ToString() + TEXT(".") + StanceStr;
+	return FGameplayTag::RequestGameplayTag(FName(*Full));
+	
 }
 
 

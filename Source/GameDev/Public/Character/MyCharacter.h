@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Data/ComboAttackData.h"
+#include "GameplayTagContainer.h"
 #include "MyCharacter.generated.h"
 
 class UInputBufferComponent;
@@ -30,10 +30,11 @@ protected:
 
 	
 	//Sarebbe il get data table row del Bp
-	
 	UFUNCTION(BlueprintCallable, Category="Combat|Combo")
 	bool GetDataTableRow_ComboAttack(const FString& Sequence, FComboAttackData& OutRow) const; 
 
+	UFUNCTION(BlueprintPure, Category="Combat|Stance")
+	FGameplayTag MakeStancedInputTag(const FGameplayTag& BaseInputTag) const;
 
 
 public:
@@ -43,6 +44,14 @@ public:
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Combat|Stance")
+	FGameplayTag CurrentStance;
+
+
+
+	
+
+	
 private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta=(AllowPrivateAccess="true"))
