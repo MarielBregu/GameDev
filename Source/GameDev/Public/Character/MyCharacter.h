@@ -3,6 +3,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/DamageComponent.h"
 #include "Data/ComboAttackData.h"
 #include "GameplayTagContainer.h"
 #include "MyCharacter.generated.h"
@@ -59,6 +60,12 @@ private:
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category="Components", meta=(AllowPrivateAccess="true"))
 	UInputTagBufferComponent* InputTagBuffer;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta=(AllowPrivateAccess="true"))
+	UDamageComponent* DamageComponent;
+
+
+
 
 };
 	

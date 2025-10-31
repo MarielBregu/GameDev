@@ -20,5 +20,11 @@ struct FComboAttackData : public FTableRowBase
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	EAttackType AttackType = EAttackType::Normal;
-	
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Damage")
+	float BaseDamage = 10.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Damage")
+	bool bCanDealDamage = true;
+		
 };

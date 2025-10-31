@@ -9,6 +9,8 @@ AMyCharacter::AMyCharacter()
 	PrimaryActorTick.bCanEverTick = true;
 	InputBuffer = CreateDefaultSubobject<UInputBufferComponent>(TEXT("InputBuffer"));
 	InputTagBuffer = CreateDefaultSubobject<UInputTagBufferComponent>(TEXT("InputTagBuffer"));
+	DamageComponent = CreateDefaultSubobject<UDamageComponent>(TEXT("DamageComponent"));
+
 }
 
 void AMyCharacter::BeginPlay()
