@@ -64,7 +64,8 @@ void UInputTagBufferComponent::TryConsumeIfReady()
     }
 
     // Sequenza valida: notifica verso BP la chiave da usare per la DataTable
-    const FString Key = MakeKeyFromTags(InputSequenceTags);
+    const FString Key = MakeKeyFromTags(InputSequenceTags)
+   ;
     OnComboAttempt.Broadcast(Key);}
 
 // -----------------------------------------------------------------------------
