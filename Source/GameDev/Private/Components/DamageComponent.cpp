@@ -1,6 +1,7 @@
 #include "Components/DamageComponent.h"
 #include "GameplayTagContainer.h"
 
+
 UDamageComponent::UDamageComponent()
 {
 	PrimaryComponentTick.bCanEverTick = false;
