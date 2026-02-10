@@ -88,7 +88,7 @@ void UInputTagBufferComponent::ResetSequence()
 // lo consumo subito (lo aggiungo alla sequenza) e provo a notificare.
 // -----------------------------------------------------------------------------
 void UInputTagBufferComponent::SetIsAttacking(bool bInIsAttacking)
-{
+                              {
     const bool bWasAttacking = bIsAttacking;
     bIsAttacking = bInIsAttacking;
 
