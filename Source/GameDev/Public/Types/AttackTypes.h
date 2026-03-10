@@ -10,4 +10,6 @@ enum class EAttackType : uint8
 	Normal UMETA(DisplayName = "Normal"),
 	Slash UMETA(DisplayName = "Slash"),
 	Slam UMETA(DisplayName = "Slam"),
+	Finisher UMETA(DisplayName = "Finisher"),
+
 };

@@ -9,7 +9,7 @@
 #include "MyCharacter.generated.h"
 
 class UInputBufferComponent;
-class UInputTagBufferComponent;
+class UInputTagBufferComponent; 
 
 UCLASS()
 class GAMEDEV_API AMyCharacter : public ACharacter

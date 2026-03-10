@@ -10,6 +10,7 @@ UDamageComponent::UDamageComponent()
 	AttackTypeBaseDamages.Add(EAttackType::Normal, 15.f);
 	AttackTypeBaseDamages.Add(EAttackType::Slash, 30.f);
 	AttackTypeBaseDamages.Add(EAttackType::Slam, 50.f);
+	AttackTypeBaseDamages.Add(EAttackType::Finisher, 20.f);
 
 	// Creazione tag stance base
 	const FGameplayTag NormalTag = FGameplayTag::RequestGameplayTag(FName("Stance.Normal"));
